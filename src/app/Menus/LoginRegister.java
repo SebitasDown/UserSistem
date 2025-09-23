@@ -32,7 +32,7 @@ public class LoginRegister  {
            }
            switch (opcion){
                case 1 -> service.iniciarSesion();
-               case 2 ->
+               case 2 -> service.Registrarse();
 
            }
         }while(opcion != 3);

@@ -4,7 +4,7 @@ public class administrador extends Usuario {
 
 
 
-    public administrador(String nombre, boolean rol, String correo, String contraseña, int telefono, String direccion) {
+    public administrador(String nombre, boolean rol, String correo, String contraseña) {
         super(nombre, rol, correo, contraseña);
     }
 

@@ -37,15 +37,19 @@ public class SeguridadPersona implements SeguridadInterface{
     }
 
     @Override
-    public void registrarUsuario(String nombre, String correo, String contraseña, boolean rol, int telefono, String direccion) {
+    public void registrarUsuario(String nombre, String correo, String contraseña,
+                                 boolean rol, int telefono, String direccion) {
         Usuario nuevo;
-        if (rol){
-            nuevo = new administrador(nombre, rol, correo, contraseña,);
+        if (rol) {
+            // true = admin
+            nuevo = new administrador(nombre, rol, correo, contraseña);
         } else {
-            nuevo = new Cliente(nombre, rol, correo, contraseña);
+            // false = cliente
+            nuevo = new Cliente(nombre, rol, correo, contraseña, telefono, direccion);
         }
         usuariosRegistrados.add(nuevo);
-        JOptionPane.showMessageDialog(null, "Usuario registrado exitosamente" + (rol ? "ADMIN" : "CLIENTE"));
+        JOptionPane.showMessageDialog(null,
+                "Usuario registrado exitosamente como " + (rol ? "ADMIN" : "CLIENTE"));
     }
 
     public Usuario getUsuarioLogueado() {

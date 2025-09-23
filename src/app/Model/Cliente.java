@@ -6,11 +6,14 @@ public class Cliente extends Usuario{
     private String direccion;
     private int telefono;
 
-    public Cliente(String nombre, boolean rol, String correo, String contraseña) {
+    public Cliente(String nombre, boolean rol, String correo, String contraseña, int telefono, String direccion) {
         super(nombre, rol, correo, contraseña);
 
         setBloqueador(bloqueador);
+        setDireccion(direccion);
+        setTelefono(telefono);
     }
+
 
 
     public void setBloqueador(boolean bloqueador) {
@@ -20,11 +23,11 @@ public class Cliente extends Usuario{
         return bloqueador;
     }
 
-    public void setDireccion(){ this.direccion = direccion;}
-    public String getDireccion(String direccion){ return direccion;}
+    public void setDireccion(String direccion){ this.direccion = direccion;}
+    public String getDireccion(){ return direccion;}
 
-    public void setTelefono() {this.telefono = telefono;}
-    public int getTelefono(int telefono){ return telefono;}
+    public void setTelefono(int telefono) {this.telefono = telefono;}
+    public int getTelefono(){ return telefono;}
 
     @Override
     public String getSaludo() {
