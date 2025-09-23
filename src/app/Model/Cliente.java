@@ -20,6 +20,12 @@ public class Cliente extends Usuario{
         return bloqueador;
     }
 
+    public void setDireccion(){ this.direccion = direccion;}
+    public String getDireccion(String direccion){ return direccion;}
+
+    public void setTelefono() {this.telefono = telefono;}
+    public int getTelefono(int telefono){ return telefono;}
+
     @Override
     public String getSaludo() {
         return "";

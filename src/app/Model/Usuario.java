@@ -8,7 +8,7 @@ public abstract class Usuario {
 
     public Usuario(String nombre, boolean rol, String correo, String contraseña) {
         setContraseña(contraseña);
-        setCorreo(contraseña);
+        setCorreo(correo);
         setNombre(nombre);
         setRol(rol);
     }
