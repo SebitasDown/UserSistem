@@ -1,15 +1,17 @@
 package app.Model;
 
-public class Cliente extends Usuario{
+import app.interfaces.ClienteInterface;
 
-    private boolean bloqueador;
+public class Cliente extends Usuario implements ClienteInterface {
+
+    private boolean bloqueado;
     private String direccion;
     private int telefono;
 
     public Cliente(String nombre, boolean rol, String correo, String contraseña, int telefono, String direccion) {
         super(nombre, rol, correo, contraseña);
 
-        setBloqueador(bloqueador);
+        setBloqueador(false);
         setDireccion(direccion);
         setTelefono(telefono);
     }
@@ -17,10 +19,10 @@ public class Cliente extends Usuario{
 
 
     public void setBloqueador(boolean bloqueador) {
-        this.bloqueador = bloqueador;
+        this.bloqueado = bloqueado;
     }
     public boolean getBloqueador(){
-        return bloqueador;
+        return bloqueado;
     }
 
     public void setDireccion(String direccion){ this.direccion = direccion;}
@@ -32,5 +34,21 @@ public class Cliente extends Usuario{
     @Override
     public String getSaludo() {
         return "";
+    }
+
+
+    @Override
+    public String actualizarCorreo(String nuevocorreo) {
+        if (nuevocorreo != null && nuevocorreo.contains("@")) {
+            this.setCorreo(nuevocorreo);
+            return "Correo actualizado correo";
+        }
+        return "No se pudo actualizar el correo";
+    }
+
+    @Override
+    public int actualizarTelefono(int nuevotelefono) {
+        this.setTelefono(nuevotelefono);
+        return nuevotelefono;
     }
 }

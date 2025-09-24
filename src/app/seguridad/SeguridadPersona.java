@@ -17,6 +17,13 @@ public class SeguridadPersona implements SeguridadInterface{
     public boolean login(String correo, String contraseña) {
         for (Usuario u: usuariosRegistrados){
             if(u.getCorreo().equals(correo) && u.getContraseña().equals(contraseña)){
+
+                if(u instanceof Cliente cliente){
+                    if(cliente.getBloqueador()){
+                        JOptionPane.showMessageDialog(null, "Usuario bloqueado, contacte con un administrador");
+                        return false;
+                    }
+                }
                 usuarioLogueado = u;
                 JOptionPane.showMessageDialog(null, "Usuario Logueado");
                 return true;
@@ -55,4 +62,8 @@ public class SeguridadPersona implements SeguridadInterface{
     public Usuario getUsuarioLogueado() {
         return usuarioLogueado;
     }
+    public List<Usuario> getUsuariosRegistrados() {
+        return usuariosRegistrados;
+    }
+
 }

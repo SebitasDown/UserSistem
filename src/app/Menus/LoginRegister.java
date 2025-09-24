@@ -25,16 +25,16 @@ public class LoginRegister  {
                 break;
             }
 
-           try {
-               opcion = Integer.parseInt(input);
-           }catch (NumberFormatException e){
-               opcion = 0;
-           }
-           switch (opcion){
-               case 1 -> service.iniciarSesion();
-               case 2 -> service.Registrarse();
+            try {
+                opcion = Integer.parseInt(input);
+            }catch (NumberFormatException e){
+                opcion = 0;
+            }
+            switch (opcion){
+                case 1 -> service.iniciarSesion();
+                case 2 -> service.Registrarse();
 
-           }
+            }
         }while(opcion != 3);
     }
 }

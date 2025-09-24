@@ -5,5 +5,5 @@ public interface SeguridadInterface {
     void logout();
     void registrarUsuario(String nombre, String correo, String contraseña, boolean rol, int telefono, String direccion);
 
-;
+
 }

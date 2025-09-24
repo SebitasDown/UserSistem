@@ -23,8 +23,7 @@ public abstract class Usuario {
     public void setRol(boolean rol){
         this.rol = rol;
     }
-
-    public boolean isRol() {
+    public boolean getRol() {
         return rol;
     }
 
@@ -44,5 +43,6 @@ public abstract class Usuario {
     }
 
     public abstract String getSaludo();
+
 
 }
